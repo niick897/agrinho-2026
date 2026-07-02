@@ -3,468 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Agro Sustentável - Agro Forte, Futuro Sustentável. Práticas inovadoras para uma agricultura responsável.">
-    <title>Agro Sustentável | Agro Forte, Futuro Sustentável</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Raízes do Amanhã - Agricultura sustentável que conecta tradição e inovação">
+    <title>Raízes do Amanhã | Agro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navegação -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="logo">
-                <i class="fas fa-leaf"></i>
-                <span>Agro Sustentável</span>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Início</a></li>
-                <li><a href="#sobre" class="nav-link">Sobre</a></li>
-                <li><a href="#praticas" class="nav-link">Práticas</a></li>
-                <li><a href="#tecnologias" class="nav-link">Tecnologias</a></li>
-                <li><a href="#calculadora" class="nav-link">Calculadora</a></li>
-                <li><a href="#contato" class="nav-link">Contato</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+    <!-- BARRA SUPERIOR -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span>🌿 Cultivando o amanhã, hoje.</span>
+            <span class="top-bar-date">Quinta, 02 de Julho de 2026</span>
         </div>
-    </nav>
+    </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="animate-fade-in">Agro Forte, Futuro Sustentável</h1>
-            <p class="animate-fade-in-delay">Equilíbrio entre produção e meio ambiente para as próximas gerações</p>
-            <div class="hero-buttons animate-fade-in-delay-2">
-                <a href="#praticas" class="btn btn-primary">Conheça as Práticas</a>
-                <a href="#calculadora" class="btn btn-secondary">Calcule sua Pegada</a>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container header-content">
+            <a href="#home" class="logo">
+                <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M20 8 C20 8, 14 16, 14 22 C14 26, 17 29, 20 29 C23 29, 26 26, 26 22 C26 16, 20 8, 20 8 Z" fill="currentColor"/>
+                    <line x1="20" y1="29" x2="20" y2="34" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="logo-title">Raízes</span>
+                    <span class="logo-subtitle">do Amanhã</span>
+                </div>
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#manifesto">Manifesto</a></li>
+                    <li><a href="#praticas">Práticas</a></li>
+                    <li><a href="#impacto">Impacto</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="#contato" class="header-cta">Fale conosco →</a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SPLIT -->
+    <section class="hero" id="home">
+        <div class="hero-left">
+            <div class="hero-tag">
+                <span class="tag-dot"></span>
+                Edição 2026 · Agroecologia
+            </div>
+            <h1 class="hero-title">
+                Onde a <em>terra</em><br>
+                encontra o <em>futuro</em>.
+            </h1>
+            <p class="hero-description">
+                Somos uma comunidade de produtores, pesquisadores e sonhadores 
+                construindo uma agricultura que respeita os ciclos da natureza 
+                e alimenta gerações.
+            </p>
+            <div class="hero-actions">
+                <a href="#manifesto" class="btn btn-dark">Nosso manifesto</a>
+                <a href="#praticas" class="btn btn-ghost">Ver práticas</a>
+            </div>
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <strong>+12 anos</strong>
+                    <span>de experiência</span>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                    <strong>+800</strong>
+                    <span>produtores parceiros</span>
+                </div>
             </div>
         </div>
-        <div class="hero-overlay"></div>
+        <div class="hero-right">
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=900" alt="Campo sustentável ao amanhecer">
+                <div class="hero-image-badge">
+                    <span class="badge-number">01</span>
+                    <span class="badge-text">Plantio<br>consciente</span>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <span>Role</span>
+                <div class="scroll-line"></div>
+            </div>
+        </div>
     </section>
 
-    <!-- Sobre Section -->
-    <section id="sobre" class="section sobre">
+    <!-- MANIFESTO -->
+    <section class="section manifesto" id="manifesto">
         <div class="container">
-            <h2 class="section-title">O que é Agricultura Sustentável?</h2>
-            <div class="sobre-content">
-                <div class="sobre-text">
-                    <p>A agricultura sustentável visa não só o menor impacto ambiental e social, como também produzir de forma eficiente e responsável [[5]].</p>
-                    <p>Agro Forte, Futuro Sustentável significa uma agricultura e pecuária que entregam alta produtividade mantendo o equilíbrio ambiental [[19]].</p>
-                    <p>É cuidar dos recursos naturais, valorizar a terra e fortalecer um futuro mais sustentável para as próximas gerações.</p>
-                    
-                    <div class="stats-grid">
-                        <div class="stat-card" data-count="7">
-                            <i class="fas fa-seedling"></i>
-                            <h3 class="stat-number">0</h3>
-                            <p>Práticas Sustentáveis</p>
+            <div class="manifesto-grid">
+                <div class="manifesto-label">
+                    <span class="label-number">01</span>
+                    <span class="label-text">Manifesto</span>
+                </div>
+                <div class="manifesto-content">
+                    <h2 class="section-title-large">
+                        Acreditamos que o campo pode ser <em>próspero</em> sem destruir o que o sustenta.
+                    </h2>
+                    <p class="manifesto-text">
+                        Nossa missão é simples e profunda: unir saberes tradicionais à ciência moderna 
+                        para criar um modelo agrícola que regenera solos, preserva águas, valoriza 
+                        pessoas e produz alimentos de verdade. Não é utopia — é prática diária.
+                    </p>
+                    <div class="manifesto-pillars">
+                        <div class="pillar">
+                            <div class="pillar-icon">◉</div>
+                            <h3>Regeneração</h3>
+                            <p>Deixar a terra melhor do que encontramos.</p>
                         </div>
-                        <div class="stat-card" data-count="50">
-                            <i class="fas fa-percentage"></i>
-                            <h3 class="stat-number">0</h3>
-                            <p>% Menos Água</p>
+                        <div class="pillar">
+                            <div class="pillar-icon">◉</div>
+                            <h3>Equilíbrio</h3>
+                            <p>Produzir sem esgotar os recursos naturais.</p>
                         </div>
-                        <div class="stat-card" data-count="100">
-                            <i class="fas fa-recycle"></i>
-                            <h3 class="stat-number">0</h3>
-                            <p>% Renovável</p>
+                        <div class="pillar">
+                            <div class="pillar-icon">◉</div>
+                            <h3>Comunidade</h3>
+                            <p>Valorizar quem vive e trabalha no campo.</p>
                         </div>
                     </div>
-                </div>
-                <div class="sobre-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-tractor"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Práticas Sustentáveis -->
-    <section id="praticas" class="section praticas">
-        <div class="container">
-            <h2 class="section-title">Práticas Sustentáveis</h2>
-            <p class="section-subtitle">Estratégias para maximizar a eficiência dos recursos naturais e minimizar impactos [[2]]</p>
-            
-            <div class="praticas-grid">
-                <div class="pratica-card" data-aos="fade-up">
-                    <div class="pratica-icon">
-                        <i class="fas fa-exchange-alt"></i>
-                    </div>
-                    <h3>ILPF</h3>
-                    <p>Integração Lavoura-Pecuária-Floresta promove sinergia entre diferentes sistemas produtivos [[1]].</p>
-                    <ul class="pratica-benefits">
-                        <li><i class="fas fa-check"></i> Melhoria do solo</li>
-                        <li><i class="fas fa-check"></i> Diversificação de renda</li>
-                        <li><i class="fas fa-check"></i> Sequestro de carbono</li>
-                    </ul>
-                </div>
-
-                <div class="pratica-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="pratica-icon">
-                        <i class="fas fa-layer-group"></i>
-                    </div>
-                    <h3>Plantio Direto</h3>
-                    <p>Sistema que mantém o solo coberto, reduzindo erosão e melhorando a retenção de água [[1]].</p>
-                    <ul class="pratica-benefits">
-                        <li><i class="fas fa-check"></i> Conservação do solo</li>
-                        <li><i class="fas fa-check"></i> Menor custo operacional</li>
-                        <li><i class="fas fa-check"></i> Aumento da matéria orgânica</li>
-                    </ul>
-                </div>
-
-                <div class="pratica-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="pratica-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Rotação de Culturas</h3>
-                    <p>Alternância de culturas melhora a fertilidade do solo e controla pragas naturalmente [[9]].</p>
-                    <ul class="pratica-benefits">
-                        <li><i class="fas fa-check"></i> Quebra de ciclo de pragas</li>
-                        <li><i class="fas fa-check"></i> Melhor uso de nutrientes</li>
-                        <li><i class="fas fa-check"></i> Solo mais saudável</li>
-                    </ul>
-                </div>
-
-                <div class="pratica-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pratica-icon">
-                        <i class="fas fa-tint"></i>
-                    </div>
-                    <h3>Manejo da Água</h3>
-                    <p>Irrigação eficiente e reaproveitamento de água da chuva evitam desperdícios [[8]].</p>
-                    <ul class="pratica-benefits">
-                        <li><i class="fas fa-check"></i> Economia de água</li>
-                        <li><i class="fas fa-check"></i> Irrigação por gotejamento</li>
-                        <li><i class="fas fa-check"></i> Captação de chuva</li>
-                    </ul>
-                </div>
-
-                <div class="pratica-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="pratica-icon">
-                        <i class="fas fa-bug"></i>
-                    </div>
-                    <h3>Controle Biológico</h3>
-                    <p>Uso de inimigos naturais reduz necessidade de agrotóxicos e preserva o ecossistema [[9]].</p>
-                    <ul class="pratica-benefits">
-                        <li><i class="fas fa-check"></i> Menos pesticidas</li>
-                        <li><i class="fas fa-check"></i> Equilíbrio ecológico</li>
-                        <li><i class="fas fa-check"></i> Produtos mais saudáveis</li>
-                    </ul>
-                </div>
-
-                <div class="pratica-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="pratica-icon">
-                        <i class="fas fa-solar-panel"></i>
-                    </div>
-                    <h3>Energia Renovável</h3>
-                    <p>Uso de energia solar e biomassa reduz emissões e custos energéticos [[21]].</p>
-                    <ul class="pratica-benefits">
-                        <li><i class="fas fa-check"></i> Energia limpa</li>
-                        <li><i class="fas fa-check"></i> Redução de custos</li>
-                        <li><i class="fas fa-check"></i> Independência energética</li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tecnologias -->
-    <section id="tecnologias" class="section tecnologias">
+    <!-- PRÁTICAS - TIMELINE -->
+    <section class="section praticas" id="praticas">
         <div class="container">
-            <h2 class="section-title">Tecnologia e Inovação</h2>
-            <p class="section-subtitle">A tecnologia ocupa papel essencial para impulsionar práticas agrícolas mais eficientes [[10]]</p>
-            
-            <div class="tech-container">
-                <div class="tech-slider">
-                    <div class="tech-card active">
-                        <i class="fas fa-drone"></i>
-                        <h3>Drones e Sensores</h3>
-                        <p>Monitoramento aéreo e sensores digitais permitem agricultura de precisão, evitando desperdícios e otimizando recursos [[16]].</p>
-                        <div class="tech-stats">
-                            <div class="tech-stat">
-                                <span class="stat-value">30%</span>
-                                <span class="stat-label">Economia de insumos</span>
-                            </div>
-                            <div class="tech-stat">
-                                <span class="stat-value">50%</span>
-                                <span class="stat-label">Mais eficiência</span>
-                            </div>
-                        </div>
-                    </div>
+            <div class="section-header-center">
+                <span class="section-label">02 — Práticas</span>
+                <h2 class="section-title-large">
+                    Técnicas que <em>transformam</em> o campo.
+                </h2>
+            </div>
 
-                    <div class="tech-card">
-                        <i class="fas fa-robot"></i>
-                        <h3>Agricultura 4.0</h3>
-                        <p>Automação, inteligência artificial e big data transformam o campo com revolução tecnológica [[15]].</p>
-                        <div class="tech-stats">
-                            <div class="tech-stat">
-                                <span class="stat-value">40%</span>
-                                <span class="stat-label">Aumento produtividade</span>
-                            </div>
-                            <div class="tech-stat">
-                                <span class="stat-value">60%</span>
-                                <span class="stat-label">Redução erros</span>
-                            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">01</div>
+                    <div class="timeline-content">
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600" alt="Agrofloresta">
                         </div>
-                    </div>
-
-                    <div class="tech-card">
-                        <i class="fas fa-flask"></i>
-                        <h3>Bioinsumos</h3>
-                        <p>Biotecnologia e bioinsumos oferecem soluções sustentáveis para proteção de cultivos [[11]].</p>
-                        <div class="tech-stats">
-                            <div class="tech-stat">
-                                <span class="stat-value">100%</span>
-                                <span class="stat-label">Natural</span>
-                            </div>
-                            <div class="tech-stat">
-                                <span class="stat-value">0%</span>
-                                <span class="stat-label">Resíduos tóxicos</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tech-card">
-                        <i class="fas fa-satellite"></i>
-                        <h3>GPS e IoT</h3>
-                        <p>Tecnologias de GPS e Internet das Coisas permitem monitoramento em tempo real das operações [[17]].</p>
-                        <div class="tech-stats">
-                            <div class="tech-stat">
-                                <span class="stat-value">24/7</span>
-                                <span class="stat-label">Monitoramento</span>
-                            </div>
-                            <div class="tech-stat">
-                                <span class="stat-value">99%</span>
-                                <span class="stat-label">Precisão</span>
-                            </div>
+                        <div class="timeline-text">
+                            <span class="timeline-tag">Sistemas integrados</span>
+                            <h3>Agroflorestas</h3>
+                            <p>
+                                Árvores, culturas e animais convivendo em harmonia. 
+                                Imitamos a floresta para produzir alimentos, madeira 
+                                e recuperar solos degradados.
+                            </p>
                         </div>
                     </div>
                 </div>
-                
-                <div class="tech-controls">
-                    <button class="tech-btn prev" onclick="changeTech(-1)"><i class="fas fa-chevron-left"></i></button>
-                    <div class="tech-dots">
-                        <span class="dot active" onclick="goToTech(0)"></span>
-                        <span class="dot" onclick="goToTech(1)"></span>
-                        <span class="dot" onclick="goToTech(2)"></span>
-                        <span class="dot" onclick="goToTech(3)"></span>
+
+                <div class="timeline-item reverse">
+                    <div class="timeline-marker">02</div>
+                    <div class="timeline-content">
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600" alt="Rotação de culturas">
+                        </div>
+                        <div class="timeline-text">
+                            <span class="timeline-tag">Fertilidade natural</span>
+                            <h3>Rotação e consórcio</h3>
+                            <p>
+                                Alternar espécies enriquece o solo, quebra ciclos de pragas 
+                                e reduz a necessidade de insumos externos.
+                            </p>
+                        </div>
                     </div>
-                    <button class="tech-btn next" onclick="changeTech(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">03</div>
+                    <div class="timeline-content">
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600" alt="Irrigação inteligente">
+                        </div>
+                        <div class="timeline-text">
+                            <span class="timeline-tag">Tecnologia no campo</span>
+                            <h3>Irrigação de precisão</h3>
+                            <p>
+                                Sensores e automação entregam a água exata que cada 
+                                planta precisa — sem desperdício, sem estresse hídrico.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reverse">
+                    <div class="timeline-marker">04</div>
+                    <div class="timeline-content">
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=600" alt="Controle biológico">
+                        </div>
+                        <div class="timeline-text">
+                            <span class="timeline-tag">Defesa natural</span>
+                            <h3>Controle biológico</h3>
+                            <p>
+                                Inimigos naturais no combate às pragas. Menos veneno, 
+                                mais equilíbrio ecológico e alimentos mais saudáveis.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Calculadora de Pegada de Carbono -->
-    <section id="calculadora" class="section calculadora">
+    <!-- IMPACTO - BENTO GRID -->
+    <section class="section impacto" id="impacto">
         <div class="container">
-            <h2 class="section-title">Calculadora de Sustentabilidade</h2>
-            <p class="section-subtitle">Descubra o impacto ambiental da sua propriedade e como melhorá-lo</p>
-            
-            <div class="calc-container">
-                <form class="calc-form" id="calcForm">
-                    <div class="form-group">
-                        <label for="area"><i class="fas fa-ruler-combined"></i> Área da Propriedade (hectares)</label>
-                        <input type="number" id="area" min="1" required placeholder="Ex: 100">
+            <div class="section-header-center">
+                <span class="section-label">03 — Impacto</span>
+                <h2 class="section-title-large">
+                    Números que <em>contam</em> nossa história.
+                </h2>
+            </div>
+
+            <div class="bento-grid">
+                <div class="bento-card bento-large">
+                    <div class="bento-number">
+                        <span class="counter" data-target="40">0</span><span class="counter-suffix">%</span>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="agua"><i class="fas fa-tint"></i> Consumo Mensal de Água (m³)</label>
-                        <input type="number" id="agua" min="0" required placeholder="Ex: 500">
+                    <h3>Economia de água</h3>
+                    <p>Com sistemas de irrigação inteligente em propriedades parceiras.</p>
+                    <div class="bento-decoration"></div>
+                </div>
+
+                <div class="bento-card bento-medium">
+                    <div class="bento-number">
+                        <span class="counter" data-target="800">0</span><span class="counter-suffix">+</span>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="energia"><i class="fas fa-bolt"></i> Consumo Mensal de Energia (kWh)</label>
-                        <input type="number" id="energia" min="0" required placeholder="Ex: 1000">
+                    <h3>Produtores apoiados</h3>
+                    <p>em transição para modelos sustentáveis.</p>
+                </div>
+
+                <div class="bento-card bento-medium">
+                    <div class="bento-number">
+                        <span class="counter" data-target="60">0</span><span class="counter-suffix">%</span>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="praticas"><i class="fas fa-check-circle"></i> Práticas Sustentáveis Adotadas</label>
-                        <div class="checkbox-group">
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="pratica" value="ilpf">
-                                <span>ILPF</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="pratica" value="plantio">
-                                <span>Plantio Direto</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="pratica" value="solar">
-                                <span>Energia Solar</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="pratica" value="agua">
-                                <span>Reuso de Água</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="pratica" value="organico">
-                                <span>Adubo Orgânico</span>
-                            </label>
-                        </div>
+                    <h3>Menos agrotóxicos</h3>
+                    <p>graças ao controle biológico e práticas integradas.</p>
+                </div>
+
+                <div class="bento-card bento-small">
+                    <div class="bento-number">
+                        <span class="counter" data-target="12">0</span>
                     </div>
-                    
-                    <button type="submit" class="btn btn-calc">
-                        <i class="fas fa-calculator"></i> Calcular Impacto
-                    </button>
-                </form>
-                
-                <div class="calc-result" id="calcResult" style="display: none;">
-                    <h3><i class="fas fa-chart-pie"></i> Resultado da Análise</h3>
-                    <div class="result-grid">
-                        <div class="result-item">
-                            <div class="result-icon">
-                                <i class="fas fa-cloud"></i>
-                            </div>
-                            <div class="result-info">
-                                <span class="result-label">Pegada de Carbono</span>
-                                <span class="result-value" id="carbonFootprint">0 tCO₂/ano</span>
-                            </div>
-                        </div>
-                        
-                        <div class="result-item">
-                            <div class="result-icon">
-                                <i class="fas fa-water"></i>
-                            </div>
-                            <div class="result-info">
-                                <span class="result-label">Eficiência Hídrica</span>
-                                <span class="result-value" id="waterEfficiency">0%</span>
-                            </div>
-                        </div>
-                        
-                        <div class="result-item">
-                            <div class="result-icon">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <div class="result-info">
-                                <span class="result-label">Índice de Sustentabilidade</span>
-                                <span class="result-value" id="sustainabilityIndex">0/10</span>
-                            </div>
-                        </div>
+                    <h3>Anos de campo</h3>
+                </div>
+
+                <div class="bento-card bento-small">
+                    <div class="bento-number">
+                        <span class="counter" data-target="25">0</span><span class="counter-suffix">mil</span>
                     </div>
-                    
-                    <div class="recommendations" id="recommendations">
-                        <h4><i class="fas fa-lightbulb"></i> Recomendações</h4>
-                        <ul id="recList"></ul>
-                    </div>
-                    
-                    <button class="btn btn-secondary" onclick="resetCalc()">
-                        <i class="fas fa-redo"></i> Nova Calculadora
-                    </button>
+                    <h3>Hectares regenerados</h3>
+                </div>
+
+                <div class="bento-card bento-wide">
+                    <blockquote>
+                        "A terra não herdamos de nossos pais — ela nos foi emprestada por nossos filhos."
+                    </blockquote>
+                    <cite>— Provérbio indígena</cite>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contato -->
-    <section id="contato" class="section contato">
+    <!-- CONTATO -->
+    <section class="section contato" id="contato">
         <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
-            <p class="section-subtitle">Quer saber mais sobre agricultura sustentável? Fale conosco!</p>
-            
             <div class="contato-grid">
                 <div class="contato-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Endereço</h4>
-                            <p>Rua da Sustentabilidade, 123<br>Campo Verde - PR</p>
+                    <span class="section-label">04 — Contato</span>
+                    <h2 class="section-title-large">
+                        Vamos <em>conversar</em> sobre o futuro do campo?
+                    </h2>
+                    <p>
+                        Seja você produtor, pesquisador, estudante ou apenas alguém 
+                        que se importa com o planeta — queremos te ouvir.
+                    </p>
+                    <div class="contato-details">
+                        <div class="detail-item">
+                            <span class="detail-label">E-mail</span>
+                            <span class="detail-value">ola@raizesdoamanha.com.br</span>
                         </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Telefone</h4>
-                            <p>(41) 99999-9999</p>
+                        <div class="detail-item">
+                            <span class="detail-label">Telefone</span>
+                            <span class="detail-value">+55 (11) 4002-8922</span>
                         </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>contato@agrosustentavel.com.br</p>
+                        <div class="detail-item">
+                            <span class="detail-label">Endereço</span>
+                            <span class="detail-value">Estrada do Sol, km 12 — Interior de SP</span>
                         </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
-                <form class="contato-form" id="contatoForm">
+                <form class="contato-form" id="contato-form">
                     <div class="form-row">
-                        <input type="text" placeholder="Seu Nome" required>
-                        <input type="email" placeholder="Seu Email" required>
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
                     </div>
-                    <input type="text" placeholder="Assunto" required>
-                    <textarea rows="5" placeholder="Sua Mensagem" required></textarea>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i> Enviar Mensagem
-                    </button>
+                    <div class="form-group">
+                        <label for="assunto">Assunto</label>
+                        <input type="text" id="assunto" name="assunto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-full">Enviar mensagem →</button>
+                    <div class="form-feedback" id="form-feedback"></div>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3><i class="fas fa-leaf"></i> Agro Sustentável</h3>
-                    <p>Comprometidos com um futuro mais verde e produtivo para o agronegócio brasileiro.</p>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo logo-footer">
+                        <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M20 8 C20 8, 14 16, 14 22 C14 26, 17 29, 20 29 C23 29, 26 26, 26 22 C26 16, 20 8, 20 8 Z" fill="currentColor"/>
+                            <line x1="20" y1="29" x2="20" y2="34" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        <div class="logo-text">
+                            <span class="logo-title">Raízes</span>
+                            <span class="logo-subtitle">do Amanhã</span>
+                        </div>
+                    </div>
+                    <p class="footer-tagline">Cultivando o amanhã, hoje.</p>
                 </div>
-                
-                <div class="footer-section">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="#home">Início</a></li>
-                        <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#praticas">Práticas</a></li>
-                        <li><a href="#tecnologias">Tecnologias</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Práticas</h4>
-                    <ul>
-                        <li><a href="#">ILPF</a></li>
-                        <li><a href="#">Plantio Direto</a></li>
-                        <li><a href="#">Agricultura Orgânica</a></li>
-                        <li><a href="#">Energia Renovável</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Newsletter</h4>
-                    <p>Receba novidades sobre sustentabilidade</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Seu email">
-                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
-                    </form>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h5>Navegação</h5>
+                        <ul>
+                            <li><a href="#home">Início</a></li>
+                            <li><a href="#manifesto">Manifesto</a></li>
+                            <li><a href="#praticas">Práticas</a></li>
+                            <li><a href="#impacto">Impacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Redes</h5>
+                        <ul>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">YouTube</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                            <li><a href="#">Newsletter</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2026 Agro Sustentável. Todos os direitos reservados.</p>
-                <p>Agro Forte, Futuro Sustentável 🌱</p>
+                <p>© 2026 Raízes do Amanhã. Feito com terra, suor e esperança.</p>
+                <p class="footer-small">Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" id="scrollTop">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
     <script src="script.js"></script>
 </body>
