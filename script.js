@@ -1,307 +1,185 @@
-// Menu Mobile
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('navMenu');
-const navLinks = document.querySelectorAll('.nav-link');
+// ============ HEADER COM SOMBRA ============
+const header = document.getElementById('header');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
-
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-    });
-});
-
-// Navbar scroll effect
 window.addEventListener('scroll', () => {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
+    if (window.scrollY > 30) {
+        header.classList.add('scrolled');
     } else {
-        navbar.classList.remove('scrolled');
-    }
-    
-    // Scroll to top button
-    const scrollTop = document.getElementById('scrollTop');
-    if (window.scrollY > 500) {
-        scrollTop.classList.add('visible');
-    } else {
-        scrollTop.classList.remove('visible');
+        header.classList.remove('scrolled');
     }
 });
 
-// Scroll to top
-document.getElementById('scrollTop').addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+// ============ MENU MOBILE ============
+const menuToggle = document.getElementById('menu-toggle');
+const nav = document.querySelector('.nav');
+
+menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-list a').forEach(link => {
+    link.addEventListener('click', () => {
+        nav.classList.remove('active');
     });
 });
 
-// Animação de números (contador)
-const animateValue = (obj, start, end, duration) => {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        obj.innerHTML = Math.floor(progress * (end - start) + start);
-        if (progress < 1) {
-            window.requestAnimationFrame(step);
-        }
-    };
-    window.requestAnimationFrame(step);
-};
-
-// Intersection Observer para animações
-const observerOptions = {
-    threshold: 0.5,
-    rootMargin: "0px"
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            if (entry.target.classList.contains('stat-number')) {
-                const target = parseInt(entry.target.getAttribute('data-count'));
-                animateValue(entry.target, 0, target, 2000);
-                observer.unobserve(entry.target);
-            }
-            
-            if (entry.target.classList.contains('pratica-card')) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        }
-    });
-}, observerOptions);
-
-// Observar elementos
-document.querySelectorAll('.stat-number').forEach(stat => {
-    stat.style.opacity = '0';
-    observer.observe(stat);
-});
-
-document.querySelectorAll('.pratica-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'all 0.6s ease';
-    observer.observe(card);
-});
-
-// Slider de Tecnologias
-let currentTech = 0;
-const techCards = document.querySelectorAll('.tech-card');
-const dots = document.querySelectorAll('.dot');
-
-function showTech(index) {
-    techCards.forEach((card, i) => {
-        card.classList.remove('active');
-        dots[i].classList.remove('active');
-        if (i === index) {
-            card.classList.add('active');
-            dots[i].classList.add('active');
-        }
-    });
-}
-
-function changeTech(direction) {
-    currentTech += direction;
-    if (currentTech >= techCards.length) currentTech = 0;
-    if (currentTech < 0) currentTech = techCards.length - 1;
-    showTech(currentTech);
-}
-
-function goToTech(index) {
-    currentTech = index;
-    showTech(currentTech);
-}
-
-// Auto-play do slider
-setInterval(() => {
-    changeTech(1);
-}, 5000);
-
-// Calculadora de Sustentabilidade
-document.getElementById('calcForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const area = parseFloat(document.getElementById('area').value);
-    const agua = parseFloat(document.getElementById('agua').value);
-    const energia = parseFloat(document.getElementById('energia').value);
-    const praticas = document.querySelectorAll('input[name="pratica"]:checked');
-    
-    // Cálculos
-    const carbonFootprint = ((area * 0.5) + (agua * 0.1) + (energia * 0.05)).toFixed(2);
-    const waterEfficiency = Math.min(100, ((1000 - (agua / area)) / 10).toFixed(1));
-    const praticasCount = praticas.length;
-    const sustainabilityIndex = (praticasCount * 1.5 + (waterEfficiency / 10)).toFixed(1);
-    
-    // Atualizar resultados
-    document.getElementById('carbonFootprint').textContent = `${carbonFootprint} tCO₂/ano`;
-    document.getElementById('waterEfficiency').textContent = `${waterEfficiency}%`;
-    document.getElementById('sustainabilityIndex').textContent = `${sustainabilityIndex}/10`;
-    
-    // Gerar recomendações
-    const recommendations = [];
-    
-    if (praticasCount < 3) {
-        recommendations.push('Implemente mais práticas sustentáveis como ILPF e plantio direto');
-    }
-    if (waterEfficiency < 70) {
-        recommendations.push('Invista em sistemas de irrigação por gotejamento e captação de água da chuva');
-    }
-    if (energia > area * 20) {
-        recommendations.push('Considere instalar painéis solares para reduzir consumo energético');
-    }
-    if (!Array.from(praticas).some(p => p.value === 'ilpf')) {
-        recommendations.push('A ILPF pode aumentar a produtividade em até 30%');
-    }
-    if (!Array.from(praticas).some(p => p.value === 'solar')) {
-        recommendations.push('Energia solar pode reduzir custos em até 95%');
-    }
-    
-    if (recommendations.length === 0) {
-        recommendations.push('Parabéns! Sua propriedade já adota excelentes práticas sustentáveis');
-        recommendations.push('Continue monitorando e melhorando seus processos');
-    }
-    
-    const recList = document.getElementById('recList');
-    recList.innerHTML = '';
-    recommendations.forEach(rec => {
-        const li = document.createElement('li');
-        li.textContent = rec;
-        recList.appendChild(li);
-    });
-    
-    // Mostrar resultados
-    document.getElementById('calcForm').style.display = 'none';
-    document.getElementById('calcResult').style.display = 'block';
-    document.getElementById('calcResult').scrollIntoView({ behavior: 'smooth' });
-});
-
-function resetCalc() {
-    document.getElementById('calcForm').reset();
-    document.getElementById('calcForm').style.display = 'grid';
-    document.getElementById('calcResult').style.display = 'none';
-    window.scrollTo({
-        top: document.getElementById('calculadora').offsetTop - 100,
-        behavior: 'smooth'
-    });
-}
-
-// Formulário de contato
-document.getElementById('contatoForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Simulação de envio
-    const btn = this.querySelector('button[type="submit"]');
-    const originalText = btn.innerHTML;
-    
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-    btn.disabled = true;
-    
-    setTimeout(() => {
-        btn.innerHTML = '<i class="fas fa-check"></i> Mensagem Enviada!';
-        btn.style.background = 'var(--secondary-color)';
-        
-        setTimeout(() => {
-            this.reset();
-            btn.innerHTML = originalText;
-            btn.disabled = false;
-            btn.style.background = '';
-            
-            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-        }, 2000);
-    }, 1500);
-});
-
-// Smooth scroll para links internos
+// ============ SCROLL SUAVE ============
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            e.preventDefault();
+            const headerHeight = header.offsetHeight;
+            const targetPosition = targetElement.offsetTop - headerHeight - 20;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
         }
     });
 });
 
-// Efeito de digitação no hero (opcional)
-const phrases = [
-    'Agro Forte, Futuro Sustentável',
-    'Tecnologia e Inovação',
-    'Preservação Ambiental',
-    'Produção Responsável'
-];
+// ============ ANIMAÇÃO DOS TIMELINE ITEMS ============
+const timelineItems = document.querySelectorAll('.timeline-item');
 
-let phraseIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-const heroTitle = document.querySelector('.hero h1');
-
-function typeEffect() {
-    const currentPhrase = phrases[phraseIndex];
-    
-    if (isDeleting) {
-        heroTitle.textContent = currentPhrase.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        heroTitle.textContent = currentPhrase.substring(0, charIndex + 1);
-        charIndex++;
-    }
-    
-    let typeSpeed = isDeleting ? 50 : 100;
-    
-    if (!isDeleting && charIndex === currentPhrase.length) {
-        typeSpeed = 2000;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-        typeSpeed = 500;
-    }
-    
-    setTimeout(typeEffect, typeSpeed);
-}
-
-// Iniciar efeito de digitação após carregamento
-window.addEventListener('load', () => {
-    setTimeout(typeEffect, 2000);
+const timelineObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.classList.add('visible');
+            }, index * 150);
+            timelineObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.2,
+    rootMargin: '0px 0px -80px 0px'
 });
 
-// Animação de entrada suave para todas as seções
-const sectionObserver = new IntersectionObserver((entries) => {
+timelineItems.forEach(item => timelineObserver.observe(item));
+
+// ============ CONTADORES ANIMADOS ============
+const counters = document.querySelectorAll('.counter');
+let countersAnimated = false;
+
+const countersObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+        if (entry.isIntersecting && !countersAnimated) {
+            countersAnimated = true;
+            animateCounters();
+        }
+    });
+}, { threshold: 0.3 });
+
+const bentoGrid = document.querySelector('.bento-grid');
+if (bentoGrid) {
+    countersObserver.observe(bentoGrid);
+}
+
+function animateCounters() {
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const duration = 2200;
+        const startTime = performance.now();
+
+        function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Easing function (ease-out cubic)
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(eased * target);
+            
+            counter.textContent = current.toLocaleString('pt-BR');
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target.toLocaleString('pt-BR');
+            }
+        }
+        
+        requestAnimationFrame(updateCounter);
+    });
+}
+
+// ============ FORMULÁRIO ============
+const form = document.getElementById('contato-form');
+const feedback = document.getElementById('form-feedback');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const assunto = document.getElementById('assunto').value.trim();
+    const mensagem = document.getElementById('mensagem').value.trim();
+
+    if (!nome || !email || !assunto || !mensagem) {
+        showFeedback('Por favor, preencha todos os campos.', 'error');
+        return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        showFeedback('Insira um e-mail válido.', 'error');
+        return;
+    }
+
+    showFeedback('✓ Mensagem enviada! Retornaremos em breve.', 'success');
+    form.reset();
+
+    setTimeout(() => {
+        feedback.style.display = 'none';
+        feedback.classList.remove('success', 'error');
+    }, 5000);
+});
+
+function showFeedback(message, type) {
+    feedback.textContent = message;
+    feedback.className = 'form-feedback ' + type;
+}
+
+// ============ PARALLAX SUAVE NA IMAGEM DO HERO ============
+const heroImage = document.querySelector('.hero-image img');
+
+window.addEventListener('scroll', () => {
+    if (heroImage) {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * 0.15;
+        if (scrolled < window.innerHeight) {
+            heroImage.style.transform = `translateY(${rate}px) scale(1.05)`;
+        }
+    }
+});
+
+// ============ REVEAL DOS BENTO CARDS ============
+const bentoCards = document.querySelectorAll('.bento-card');
+
+const bentoObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
+            entry.target.style.opacity = '0';
+            entry.target.style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                entry.target.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }, index * 100);
+            
+            bentoObserver.unobserve(entry.target);
         }
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('section').forEach(section => {
-    sectionObserver.observe(section);
-});
+bentoCards.forEach(card => bentoObserver.observe(card));
 
-// Adicionar classe CSS para animação fade-in
-const style = document.createElement('style');
-style.textContent = `
-    section {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease;
-    }
-    
-    section.fade-in {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-document.head.appendChild(style);
-
-console.log('🌱 Agro Sustentável - Site carregado com sucesso!');
+// ============ MENSAGEM NO CONSOLE ============
+console.log('%c🌾 Raízes do Amanhã', 'color: #8b5a3c; font-size: 24px; font-weight: bold; font-family: Georgia;');
+console.log('%cCultivando o amanhã, hoje.', 'color: #6b7a3a; font-size: 14px; font-style: italic;');
