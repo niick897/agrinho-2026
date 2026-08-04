@@ -2,9 +2,9 @@
 const header = document.getElementById('header');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) {
+    if (header && window.scrollY > 30) {
         header.classList.add('scrolled');
-    } else {
+    } else if (header) {
         header.classList.remove('scrolled');
     }
 });
@@ -13,14 +13,17 @@ window.addEventListener('scroll', () => {
 const menuToggle = document.getElementById('menu-toggle');
 const nav = document.querySelector('.nav');
 
-menuToggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-    menuToggle.classList.toggle('active');
-});
+if (menuToggle && nav) {
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+}
 
 document.querySelectorAll('.nav-list a').forEach(link => {
     link.addEventListener('click', () => {
-        nav.classList.remove('active');
+        if (nav) nav.classList.remove('active');
+        if (menuToggle) menuToggle.classList.remove('active');
     });
 });
 
@@ -33,7 +36,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             e.preventDefault();
-            const headerHeight = header.offsetHeight;
+            const headerHeight = header ? header.offsetHeight : 0;
             const targetPosition = targetElement.offsetTop - headerHeight - 20;
             
             window.scrollTo({
@@ -47,60 +50,72 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ============ ANIMAÇÃO DOS TIMELINE ITEMS ============
 const timelineItems = document.querySelectorAll('.timeline-item');
 
-const timelineObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.classList.add('visible');
-            }, index * 150);
-            timelineObserver.unobserve(entry.target);
-        }
+if (timelineItems.length > 0) {
+    const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 150);
+                timelineObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -80px 0px'
     });
-}, {
-    threshold: 0.2,
-    rootMargin: '0px 0px -80px 0px'
-});
 
-timelineItems.forEach(item => timelineObserver.observe(item));
+    timelineItems.forEach(item => timelineObserver.observe(item));
+}
 
-// ============ CONTADORES ANIMADOS ============
-const counters = document.querySelectorAll('.counter');
+// ============ CONTADORES ANIMADOS (Ajustado para o novo HTML) ============
+const counters = document.querySelectorAll('.hero-meta strong');
 let countersAnimated = false;
 
-const countersObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && !countersAnimated) {
-            countersAnimated = true;
-            animateCounters();
-        }
-    });
-}, { threshold: 0.3 });
+if (counters.length > 0) {
+    const countersObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !countersAnimated) {
+                countersAnimated = true;
+                animateCounters();
+            }
+        });
+    }, { threshold: 0.3 });
 
-const bentoGrid = document.querySelector('.bento-grid');
-if (bentoGrid) {
-    countersObserver.observe(bentoGrid);
+    const heroMeta = document.querySelector('.hero-meta');
+    if (heroMeta) {
+        countersObserver.observe(heroMeta);
+    }
 }
 
 function animateCounters() {
     counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        const duration = 2200;
+        const text = counter.textContent;
+        const target = parseInt(text.replace(/[^0-9]/g, ''), 10);
+        if (isNaN(target)) return;
+
+        const hasPlus = text.includes('+');
+        const hasYears = text.includes('anos');
+        const duration = 2000;
         const startTime = performance.now();
 
         function updateCounter(currentTime) {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
             
-            // Easing function (ease-out cubic)
             const eased = 1 - Math.pow(1 - progress, 3);
             const current = Math.floor(eased * target);
             
-            counter.textContent = current.toLocaleString('pt-BR');
+            let format = current.toLocaleString('pt-BR');
+            if (hasPlus) format = '+' + format;
+            if (hasYears) format = format + ' anos';
+            
+            counter.textContent = format;
             
             if (progress < 1) {
                 requestAnimationFrame(updateCounter);
             } else {
-                counter.textContent = target.toLocaleString('pt-BR');
+                counter.textContent = text;
             }
         }
         
@@ -108,41 +123,52 @@ function animateCounters() {
     });
 }
 
-// ============ FORMULÁRIO ============
-const form = document.getElementById('contato-form');
-const feedback = document.getElementById('form-feedback');
+// ============ FORMULÁRIO (Ajustado para as novas IDs) ============
+const form = document.querySelector('.contato-form');
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const nome = document.getElementById('nome').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const assunto = document.getElementById('assunto').value.trim();
-    const mensagem = document.getElementById('mensagem').value.trim();
-
-    if (!nome || !email || !assunto || !mensagem) {
-        showFeedback('Por favor, preencha todos os campos.', 'error');
-        return;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        showFeedback('Insira um e-mail válido.', 'error');
-        return;
-    }
-
-    showFeedback('✓ Mensagem enviada! Retornaremos em breve.', 'success');
-    form.reset();
-
-    setTimeout(() => {
+if (form) {
+    // Cria elemento de feedback dinamicamente caso não exista no HTML
+    let feedback = document.getElementById('form-feedback');
+    if (!feedback) {
+        feedback = document.createElement('div');
+        feedback.id = 'form-feedback';
+        feedback.className = 'form-feedback';
         feedback.style.display = 'none';
-        feedback.classList.remove('success', 'error');
-    }, 5000);
-});
+        form.parentNode.insertBefore(feedback, form.nextSibling);
+    }
 
-function showFeedback(message, type) {
-    feedback.textContent = message;
-    feedback.className = 'form-feedback ' + type;
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const mensagem = document.getElementById('mensagem').value.trim();
+
+        if (!nome || !email || !mensagem) {
+            showFeedback('Por favor, preencha todos os campos.', 'error', feedback);
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showFeedback('Insira um e-mail válido.', 'error', feedback);
+            return;
+        }
+
+        showFeedback('✓ Mensagem enviada! Retornaremos em breve.', 'success', feedback);
+        form.reset();
+
+        setTimeout(() => {
+            feedback.style.display = 'none';
+            feedback.classList.remove('success', 'error');
+        }, 5000);
+    });
+}
+
+function showFeedback(message, type, element) {
+    element.textContent = message;
+    element.className = 'form-feedback ' + type;
+    element.style.display = 'block';
 }
 
 // ============ PARALLAX SUAVE NA IMAGEM DO HERO ============
@@ -158,28 +184,93 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ============ REVEAL DOS BENTO CARDS ============
-const bentoCards = document.querySelectorAll('.bento-card');
+// ============ REVEAL DOS CARDS (Otimizado) ============
+const bentoCards = document.querySelectorAll('.pillar, .timeline-content');
 
-const bentoObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '0';
-            entry.target.style.transform = 'translateY(30px)';
-            
-            setTimeout(() => {
-                entry.target.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }, index * 100);
-            
-            bentoObserver.unobserve(entry.target);
+if (bentoCards.length > 0) {
+    const bentoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '0';
+                entry.target.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    entry.target.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 80);
+                
+                bentoObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    bentoCards.forEach(card => bentoObserver.observe(card));
+}
+
+// ============ RECURSO NOVO: QUIZ INTERATIVO DEDICADO ============
+const quizContainer = document.getElementById('quiz-container');
+
+if (quizContainer) {
+    const quizQuestions = [
+        {
+            q: "Qual prática foca no plantio direto e na recuperação da saúde biológica do solo?",
+            options: ["Monocultura intensiva", "Agricultura Regenerativa", "Uso massivo de adubo químico"],
+            answer: 1,
+            explain: "A agricultura regenerativa reconstrói a matéria orgânica do solo e restaura sua biodiversidade."
+        },
+        {
+            q: "Aproximadamente, quanto o agronegócio representa para o PIB brasileiro?",
+            options: ["Cerca de 5%", "Cerca de 12%", "Cerca de 25%"],
+            answer: 2,
+            explain: "O setor representa 25% do PIB, mostrando a importância de torná-lo sustentável."
         }
-    });
-}, { threshold: 0.1 });
+    ];
 
-bentoCards.forEach(card => bentoObserver.observe(card));
+    let currentQuestionIndex = 0;
+    let score = 0;
 
-// ============ MENSAGEM NO CONSOLE ============
-console.log('%c🌾 Raízes do Amanhã', 'color: #8b5a3c; font-size: 24px; font-weight: bold; font-family: Georgia;');
-console.log('%cCultivando o amanhã, hoje.', 'color: #6b7a3a; font-size: 14px; font-style: italic;');
+    function renderQuiz() {
+        if (currentQuestionIndex >= quizQuestions.length) {
+            quizContainer.innerHTML = `
+                <div class="quiz-results">
+                    <h3>Quiz Concluído! 🎉</h3>
+                    <p>Você acertou ${score} de ${quizQuestions.length} questões.</p>
+                    <p class="quiz-profile-msg">${score === quizQuestions.length ? '🌳 Perfil Guardião da Terra: Conhecimento afiado sobre agroecologia!' : '🌱 Perfil Aprendiz do Campo: Continue explorando práticas sustentáveis.'}</p>
+                    <button class="btn btn-dark" onclick="resetQuiz()">Refazer Desafio</button>
+                </div>`;
+            return;
+        }
+
+        const data = quizQuestions[currentQuestionIndex];
+        let optionsHtml = data.options.map((opt, i) => `
+            <button class="quiz-opt-btn" onclick="checkQuizAnswer(${i})">${opt}</button>
+        `).join('');
+
+        quizContainer.innerHTML = `
+            <div class="quiz-card">
+                <span class="quiz-progress">Pergunta ${currentQuestionIndex + 1} de ${quizQuestions.length}</span>
+                <p class="quiz-question">${data.q}</p>
+                <div class="quiz-options">${optionsHtml}</div>
+                <div id="quiz-feedback" class="quiz-feedback-box" style="display:none;"></div>
+            </div>`;
+    }
+
+    window.checkQuizAnswer = function(selectedIndex) {
+        const data = quizQuestions[currentQuestionIndex];
+        const feedbackBox = document.getElementById('quiz-feedback');
+        const buttons = document.querySelectorAll('.quiz-opt-btn');
+        
+        buttons.forEach(btn => btn.disabled = true);
+        feedbackBox.style.display = 'block';
+
+        if (selectedIndex === data.answer) {
+            score++;
+            feedbackBox.className = "quiz-feedback-box success";
+            feedbackBox.innerHTML = `<strong>Correto!</strong> ${data.explain}`;
+        } else {
+            feedbackBox.className = "quiz-feedback-box error";
+            feedbackBox.innerHTML = `<strong>Incorreto.</strong> ${data.explain}`;
+        }
+
+        setTimeout(() => {
