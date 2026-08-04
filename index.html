@@ -6,16 +6,18 @@
     <meta name="description" content="Raízes do Amanhã - Agricultura sustentável que conecta tradição e inovação">
     <title>Raízes do Amanhã | Agro Sustentável</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- LINKS CORRIGIDOS: GOOGLE FONTS -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- BARRA SUPERIOR -->
     <div class="top-bar">
         <div class="container top-bar-content">
             <span>🌿 Cultivando o amanhã, hoje.</span>
-            <span class="top-bar-date">Quinta, 02 de Julho de 2026</span>
+            <span class="top-bar-date">Terça, 04 de Agosto de 2026</span>
         </div>
     </div>
 
@@ -23,7 +25,7 @@
     <header class="header" id="header">
         <div class="container header-content">
             <a href="#home" class="logo">
-                <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://w3.org">
                     <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5"/>
                     <path d="M20 8 C20 8, 14 16, 14 22 C14 26, 17 29, 20 29 C23 29, 26 26, 26 22 C26 16, 20 8, 20 8 Z" fill="currentColor"/>
                     <line x1="20" y1="29" x2="20" y2="34" stroke="currentColor" stroke-width="1.5"/>
@@ -84,7 +86,7 @@
         </div>
         <div class="hero-right">
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=900" alt="Campo sustentável ao amanhecer">
+                <img src="https://unsplash.com" alt="Campo sustentável ao amanhecer">
                 <div class="hero-image-badge">
                     <span class="badge-number">01</span>
                     <span class="badge-text">Plantio<br>consciente</span>
@@ -151,7 +153,7 @@
                     <div class="timeline-marker">01</div>
                     <div class="timeline-content">
                         <div class="timeline-image">
-                            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600" alt="Agrofloresta">
+                            <img src="https://unsplash.com" alt="Agrofloresta">
                         </div>
                         <div class="timeline-text">
                             <span class="timeline-tag">Sistemas integrados</span>
@@ -169,7 +171,7 @@
                     <div class="timeline-marker">02</div>
                     <div class="timeline-content">
                         <div class="timeline-image">
-                            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600" alt="Rotação de culturas">
+                            <img src="https://unsplash.com" alt="Rotação de culturas">
                         </div>
                         <div class="timeline-text">
                             <span class="timeline-tag">Fertilidade natural</span>
@@ -184,7 +186,7 @@
         </div>
     </section>
 
-    <!-- IMPACTO E DADOS (Nova seção do diagnóstico) -->
+    <!-- IMPACTO E DADOS -->
     <section class="section impacto" id="impacto">
         <div class="container">
             <div class="impacto-grid">
@@ -194,7 +196,6 @@
                     <p>
                         O agronegócio representa aproximadamente <strong>25% do PIB brasileiro</strong>. Equilibrar essa força produtiva com a conservação ambiental é o maior desafio e a maior oportunidade do nosso século.
                     </p>
-                    <!-- CONTAINER PARA GRÁFICO DINÂMICO OU CALCULADORA -->
                     <div id="chart-container" class="interactive-box">
                         <canvas id="impactoChart"></canvas>
                     </div>
@@ -203,11 +204,10 @@
         </div>
     </section>
 
-    <!-- QUIZ INTERATIVO (Nova seção de engajamento ativo) -->
+    <!-- QUIZ INTERATIVO -->
     <section class="section quiz-section" id="quiz">
         <div class="container">
             <div class="section-header-center">
                 <span class="section-label">Desafio Prático</span>
                 <h2 class="section-title-large">Descubra seu <em>perfil sustentável</em></h2>
                 <p>Teste seus conhecimentos sobre práticas agroecológicas e veja o impacto das suas escolhas.</p>
-            </div>
