@@ -68,7 +68,7 @@ if (timelineItems.length > 0) {
     timelineItems.forEach(item => timelineObserver.observe(item));
 }
 
-// ============ CONTADORES ANIMADOS (Ajustado para o novo HTML) ============
+// ============ CONTADORES ANIMADOS ============
 const counters = document.querySelectorAll('.hero-meta strong');
 let countersAnimated = false;
 
@@ -123,11 +123,10 @@ function animateCounters() {
     });
 }
 
-// ============ FORMULÁRIO (Ajustado para as novas IDs) ============
+// ============ FORMULÁRIO DE FEEDBACK ============
 const form = document.querySelector('.contato-form');
 
 if (form) {
-    // Cria elemento de feedback dinamicamente caso não exista no HTML
     let feedback = document.getElementById('form-feedback');
     if (!feedback) {
         feedback = document.createElement('div');
@@ -171,44 +170,7 @@ function showFeedback(message, type, element) {
     element.style.display = 'block';
 }
 
-// ============ PARALLAX SUAVE NA IMAGEM DO HERO ============
-const heroImage = document.querySelector('.hero-image img');
-
-window.addEventListener('scroll', () => {
-    if (heroImage) {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * 0.15;
-        if (scrolled < window.innerHeight) {
-            heroImage.style.transform = `translateY(${rate}px) scale(1.05)`;
-        }
-    }
-});
-
-// ============ REVEAL DOS CARDS (Otimizado) ============
-const bentoCards = document.querySelectorAll('.pillar, .timeline-content');
-
-if (bentoCards.length > 0) {
-    const bentoObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '0';
-                entry.target.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    entry.target.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }, index * 80);
-                
-                bentoObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    bentoCards.forEach(card => bentoObserver.observe(card));
-}
-
-// ============ RECURSO NOVO: QUIZ INTERATIVO DEDICADO ============
+// ============ QUIZ INTERATIVO DEDICADO ============
 const quizContainer = document.getElementById('quiz-container');
 
 if (quizContainer) {
@@ -274,3 +236,46 @@ if (quizContainer) {
         }
 
         setTimeout(() => {
+            currentQuestionIndex++;
+            renderQuiz();
+        }, 3500);
+    };
+
+    window.resetQuiz = function() {
+        currentQuestionIndex = 0;
+        score = 0;
+        renderQuiz();
+    };
+
+    renderQuiz();
+}
+
+// ============ GRÁFICO DINÂMICO ============
+const ctx = document.getElementById('impactoChart');
+
+if (ctx) {
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['PIB Agronegócio', 'Outros Setores'],
+            datasets: [{
+                data:,
+                backgroundColor: ['#6b7a3a', '#ebe3d3'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: { family: 'Inter', size: 12 },
+                        color: '#1f1a15'
+                    }
+                }
+            }
+        }
+    });
+}
