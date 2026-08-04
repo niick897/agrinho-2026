@@ -350,6 +350,10 @@ em {
     transition: transform 1s ease;
 }
 
+.hero-image:hover img {
+    transform: scale(1.05);
+}
+
 .hero-image-badge {
     position: absolute;
     bottom: 24px;
@@ -444,7 +448,7 @@ em {
     letter-spacing: -0.5px;
 }
 
-/* ============ MANIFESTO (Completado) ============ */
+/* ============ MANIFESTO ============ */
 .manifesto {
     background-color: var(--branco);
     border-top: 1px solid rgba(31, 26, 21, 0.05);
@@ -547,8 +551,10 @@ em {
 }
 
 .timeline-marker {
-    display: none; /* Layout minimalista limpo */
+    display: none;
 }
 
-.timeline-image {
-    border-radius: 8px;
+.timeline-image {border-radius: 8px;overflow: hidden;aspect-ratio: 4/3;box-shadow: var(--sombra);}.timeline-image img {width: 100%;height: 100%;object-fit: cover;}.timeline-tag {display: inline-block;font-size: 0.75rem;text-transform: uppercase;letter-spacing: 1.5px;color: var(--oliva);font-weight: 600;margin-bottom: 12px;}.timeline-text h3 {font-family: var(--serif);font-size: 1.8rem;margin-bottom: 16px;}.timeline-text p {color: var(--cinza);font-size: 0.95rem;}/* ============ SEÇÃO DE IMPACTO E GRÁFICOS ============ */.impacto {background-color: var(--branco);}.impacto-grid {display: grid;grid-template-columns: 1fr;max-width: 800px;margin: 0 auto;}.impacto-text-block h2 {margin-bottom: 24px;}.impacto-text-block p {font-size: 1.1rem;color: var(--cinza);margin-bottom: 40px;}.interactive-box {background: var(--branco);border: 1px solid rgba(31, 26, 21, 0.08);border-radius: 12px;padding: 40px;box-shadow: var(--sombra);position: relative;}#chart-container {max-width: 500px;height: 320px;margin: 0 auto;}/* ============ INTERATIVIDADE: QUIZ ============ */.quiz-section {background-color: var(--creme);}#quiz-container {max-width: 650px;margin: 0 auto;min-height: 250px;}.loading-text {text-align: center;color: var(--cinza);font-style: italic;}.quiz-card {display: flex;flex-direction: column;}.quiz-progress {font-size: 0.8rem;text-transform: uppercase;letter-spacing: 1px;color: var(--cinza);margin-bottom: 12px;}.quiz-question {font-family: var(--serif);font-size: 1.4rem;font-weight: 600;color: var(--preto);margin-bottom: 24px;line-height: 1.4;}.quiz-options {display: flex;flex-direction: column;gap: 12px;}.quiz-opt-btn {background-color: var(--branco);border: 1px solid rgba(31, 26, 21, 0.1);padding: 16px 24px;border-radius: 8px;text-align: left;font-family: var(--sans);font-size: 0.95rem;color: var(--preto);cursor: pointer;transition: var(--transicao);}.quiz-opt-btn:hover:not(:disabled) {background-color: var(--creme);border-color: var(--terra);transform: translateX(4px);}.quiz-feedback-box {margin-top: 20px;padding: 16px;border-radius: 6px;font-size: 0.9rem;line-height: 1.5;animation: fadeIn 0.4s ease;}.quiz-feedback-box.success {background-color: rgba(107, 122, 58, 0.1);color: var(--oliva-escura);border-left: 4px solid var(--oliva);}.quiz-feedback-box.error {background-color: rgba(193, 122, 86, 0.1);color: var(--terra-escura);border-left: 4px solid var(--terracota);}.quiz-results {text-align: center;animation: fadeIn 0.5s ease;}.quiz-results h3 {font-family: var(--serif);font-size: 1.8rem;margin-bottom: 12px;}.quiz-profile-msg {color: var(--cinza);margin: 16px 0 24px;font-size: 1.05rem;}@keyframes fadeIn {from { opacity: 0; transform: translateY(10px); }to { opacity: 1; transform: translateY(0); }}/* ============ CONTATO & FORMULÁRIO ============ */.contato-grid {display: grid;grid-template-columns: 1fr 1fr;gap: 80px;align-items: start;}.contato-info h2 {font-family: var(--serif);font-size: 2.8rem;line-height: 1.15;margin-bottom: 24px;}.contato-info p {color: var(--cinza);font-size: 1.05rem;}.contato-form {display: flex;flex-direction: column;gap: 24px;}.form-group {display: flex;flex-direction: column;gap: 8px;}.form-group label {font-size: 0.8rem;font-weight: 600;text-transform: uppercase;letter-spacing: 1px;color: var(--preto);}.form-group input,.form-group textarea {background-color: var(--branco);border: 1px solid rgba(31, 26, 21, 0.1);padding: 16px;border-radius: 6px;font-family: var(--sans);font-size: 0.95rem;color: var(--preto);transition: var(--transicao);}.form-group input:focus,.form-group textarea:focus {outline: none;border-color: var(--terra);box-shadow: 0 0 0 3px rgba(139, 90, 60, 0.1);}.form-feedback {padding: 14px;border-radius: 6px;font-size: 0.9rem;margin-top: 16px;font-weight: 500;}.form-feedback.success {background-color: rgba(107, 122, 58, 0.1);color: var(--oliva-escura);}.form-feedback.error {background-color: rgba(193, 122, 86, 0.1);color: var(--terra-escura);}/* ============ RESPONSIVIDADE (MEDIA QUERIES) ============ */@media (max-width: 1024px) {.hero {grid-template-columns: 1fr;gap: 40px;padding-top: 40px;}.hero-right {max-width: 600px;margin: 0 auto;width: 100%;}.contato-grid {grid-template-columns: 1fr;gap: 50px;}}@media (max-width: 768px) {.container {padding: 0 24px;}.section {padding: 80px 0;}.menu-toggle {display: flex;}.nav {position: absolute;top: 100%;left: 0;width: 100%;background-color: var(--branco);padding: 40px 24px;border-bottom: 1px solid rgba(31, 26, 21, 0.08);display: none;}.nav.active {display: block;}.nav-list {flex-direction: column;gap: 24px;}.header-cta {display: none;}.manifesto-grid {grid-template-columns: 1fr;}.timeline-item {grid-template-columns: 1fr;gap: 24px;}.timeline-item.reverse {direction: ltr;}.interactive-box {padding: 24px;}}
+<FollowUp>
+Basta salvar esses códigos com as nomenclaturas exatas (`index.html`, `script.js` e `style.css`) na mesma pasta do seu computador para visualizar o projeto completo. Gostaria de receber alguma orientação sobre **como publicar esse site de graça** ou estruturar novas seções?
+</FollowUp>
