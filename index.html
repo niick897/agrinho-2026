@@ -3,29 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Raízes do Amanhã - Agricultura sustentável que conecta tradição e inovação">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Raízes do Amanhã - Agricultura sustentável que conecta tradição e inovação. Descubra práticas agroecológicas, dados do agronegócio e soluções para um campo mais próspero.">
+    <meta name="keywords" content="agricultura sustentável, agroecologia, agronegócio, PIB agrícola, sustentabilidade no campo, agrofloresta, rotação de culturas">
+    <meta name="author" content="Raízes do Amanhã">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://raizesdoamanha.com.br/">
+    <meta property="og:title" content="Raízes do Amanhã | Agro Sustentável">
+    <meta property="og:description" content="Onde a terra encontra o futuro. Agricultura sustentável que conecta tradição e inovação.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&h=630&fit=crop">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://raizesdoamanha.com.br/">
+    <meta property="twitter:title" content="Raízes do Amanhã | Agro Sustentável">
+    <meta property="twitter:description" content="Onde a terra encontra o futuro. Agricultura sustentável que conecta tradição e inovação.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&h=630&fit=crop">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    
     <title>Raízes do Amanhã | Agro Sustentável</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- LINKS CORRIGIDOS: GOOGLE FONTS -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Raízes do Amanhã",
+        "description": "Agricultura sustentável que conecta tradição e inovação",
+        "url": "https://raizesdoamanha.com.br"
+    }
+    </script>
 </head>
 <body>
     <!-- BARRA SUPERIOR -->
-    <div class="top-bar">
+    <div class="top-bar" role="banner">
         <div class="container top-bar-content">
-            <span>🌿 Cultivando o amanhã, hoje.</span>
-            <span class="top-bar-date">Terça, 04 de Agosto de 2026</span>
+            <span aria-label="Cultivando o amanhã, hoje">🌿 Cultivando o amanhã, hoje.</span>
+            <time class="top-bar-date" datetime="2026-08-04">Terça, 04 de Agosto de 2026</time>
         </div>
     </div>
 
     <!-- HEADER -->
-    <header class="header" id="header">
+    <header class="header" id="header" role="banner">
         <div class="container header-content">
-            <a href="#home" class="logo">
-                <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://w3.org">
+            <a href="#home" class="logo" aria-label="Raízes do Amanhã - Página inicial">
+                <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5"/>
                     <path d="M20 8 C20 8, 14 16, 14 22 C14 26, 17 29, 20 29 C23 29, 26 26, 26 22 C26 16, 20 8, 20 8 Z" fill="currentColor"/>
                     <line x1="20" y1="29" x2="20" y2="34" stroke="currentColor" stroke-width="1.5"/>
@@ -35,17 +71,22 @@
                     <span class="logo-subtitle">do Amanhã</span>
                 </div>
             </a>
-            <nav class="nav">
+            
+            <nav class="nav" role="navigation" aria-label="Menu principal">
                 <ul class="nav-list">
-                    <li><a href="#home">Início</a></li>
+                    <li><a href="#home" aria-current="page">Início</a></li>
                     <li><a href="#manifesto">Manifesto</a></li>
                     <li><a href="#praticas">Práticas</a></li>
                     <li><a href="#impacto">Impacto</a></li>
+                    <li><a href="#quiz">Quiz</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
-            <a href="#contato" class="header-cta">Fale conosco →</a>
-            <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+            
+            <a href="#contato" class="header-cta" aria-label="Fale conosco">Fale conosco →</a>
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-list">
+                <span></span>
                 <span></span>
                 <span></span>
             </button>
@@ -53,46 +94,58 @@
     </header>
 
     <!-- HERO SPLIT -->
-    <section class="hero" id="home">
+    <section class="hero" id="home" aria-labelledby="hero-title">
         <div class="hero-left">
             <div class="hero-tag">
-                <span class="tag-dot"></span>
-                Edição 2026 · Agroecologia
+                <span class="tag-dot" aria-hidden="true"></span>
+                <span>Edição 2026 · Agroecologia</span>
             </div>
-            <h1 class="hero-title">
+            
+            <h1 class="hero-title" id="hero-title">
                 Onde a <em>terra</em><br>
                 encontra o <em>futuro</em>.
             </h1>
+            
             <p class="hero-description">
                 Somos uma comunidade de produtores, pesquisadores e sonhadores 
                 construindo uma agricultura que respeita os ciclos da natureza 
                 e alimenta gerações.
             </p>
+            
             <div class="hero-actions">
                 <a href="#manifesto" class="btn btn-dark">Nosso manifesto</a>
                 <a href="#praticas" class="btn btn-ghost">Ver práticas</a>
             </div>
-            <div class="hero-meta">
-                <div class="meta-item">
+            
+            <div class="hero-meta" role="list">
+                <div class="meta-item" role="listitem">
                     <strong>+12 anos</strong>
                     <span>de experiência</span>
                 </div>
-                <div class="meta-divider"></div>
-                <div class="meta-item">
+                <div class="meta-divider" aria-hidden="true"></div>
+                <div class="meta-item" role="listitem">
                     <strong>+800</strong>
                     <span>produtores parceiros</span>
                 </div>
             </div>
         </div>
+        
         <div class="hero-right">
             <div class="hero-image">
-                <img src="https://unsplash.com" alt="Campo sustentável ao amanhecer">
-                <div class="hero-image-badge">
+                <img 
+                    src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&h=600&fit=crop" 
+                    alt="Campo sustentável ao amanhecer com plantação verde e céu claro"
+                    loading="eager"
+                    width="800"
+                    height="600"
+                >
+                <div class="hero-image-badge" aria-label="Destaque: Plantio consciente">
                     <span class="badge-number">01</span>
                     <span class="badge-text">Plantio<br>consciente</span>
                 </div>
             </div>
-            <div class="hero-scroll">
+            
+            <div class="hero-scroll" aria-hidden="true">
                 <span>Role</span>
                 <div class="scroll-line"></div>
             </div>
@@ -100,38 +153,43 @@
     </section>
 
     <!-- MANIFESTO -->
-    <section class="section manifesto" id="manifesto">
+    <section class="section manifesto" id="manifesto" aria-labelledby="manifesto-title">
         <div class="container">
             <div class="manifesto-grid">
                 <div class="manifesto-label">
-                    <span class="label-number">01</span>
+                    <span class="label-number" aria-hidden="true">01</span>
                     <span class="label-text">Manifesto</span>
                 </div>
+                
                 <div class="manifesto-content">
-                    <h2 class="section-title-large">
+                    <h2 class="section-title-large" id="manifesto-title">
                         Acreditamos que o campo pode ser <em>próspero</em> sem destruir o que o sustenta.
                     </h2>
+                    
                     <p class="manifesto-text">
                         Nossa missão é simples e profunda: unir saberes tradicionais à ciência moderna 
                         para criar um modelo agrícola que regenera solos, preserva águas, valoriza 
                         pessoas e produz alimentos de verdade. Não é utopia — é prática diária.
                     </p>
-                    <div class="manifesto-pillars">
-                        <div class="pillar">
-                            <div class="pillar-icon">◉</div>
+                    
+                    <div class="manifesto-pillars" role="list">
+                        <article class="pillar" role="listitem">
+                            <div class="pillar-icon" aria-hidden="true">◉</div>
                             <h3>Regeneração</h3>
                             <p>Deixar a terra melhor do que encontramos.</p>
-                        </div>
-                        <div class="pillar">
-                            <div class="pillar-icon">◉</div>
+                        </article>
+                        
+                        <article class="pillar" role="listitem">
+                            <div class="pillar-icon" aria-hidden="true">◉</div>
                             <h3>Equilíbrio</h3>
                             <p>Produzir sem esgotar os recursos naturais.</p>
-                        </div>
-                        <div class="pillar">
-                            <div class="pillar-icon">◉</div>
+                        </article>
+                        
+                        <article class="pillar" role="listitem">
+                            <div class="pillar-icon" aria-hidden="true">◉</div>
                             <h3>Comunidade</h3>
                             <p>Valorizar quem vive e trabalha no campo.</p>
-                        </div>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -139,21 +197,27 @@
     </section>
 
     <!-- PRÁTICAS - TIMELINE -->
-    <section class="section praticas" id="praticas">
+    <section class="section praticas" id="praticas" aria-labelledby="praticas-title">
         <div class="container">
             <div class="section-header-center">
                 <span class="section-label">02 — Práticas</span>
-                <h2 class="section-title-large">
+                <h2 class="section-title-large" id="praticas-title">
                     Técnicas que <em>transformam</em> o campo.
                 </h2>
             </div>
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker">01</div>
+            <div class="timeline" role="list">
+                <article class="timeline-item" role="listitem">
+                    <div class="timeline-marker" aria-hidden="true">01</div>
                     <div class="timeline-content">
                         <div class="timeline-image">
-                            <img src="https://unsplash.com" alt="Agrofloresta">
+                            <img 
+                                src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&h=400&fit=crop" 
+                                alt="Agrofloresta com árvores frutíferas e vegetação diversificada"
+                                loading="lazy"
+                                width="600"
+                                height="400"
+                            >
                         </div>
                         <div class="timeline-text">
                             <span class="timeline-tag">Sistemas integrados</span>
@@ -163,15 +227,24 @@
                                 Imitamos a floresta para produzir alimentos, madeira 
                                 e recuperar solos degradados.
                             </p>
+                            <button class="btn-text" onclick="abrirModal('agrofloresta')" aria-label="Saiba mais sobre Agroflorestas">
+                                Saiba mais →
+                            </button>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="timeline-item reverse">
-                    <div class="timeline-marker">02</div>
+                <article class="timeline-item reverse" role="listitem">
+                    <div class="timeline-marker" aria-hidden="true">02</div>
                     <div class="timeline-content">
                         <div class="timeline-image">
-                            <img src="https://unsplash.com" alt="Rotação de culturas">
+                            <img 
+                                src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&h=400&fit=crop" 
+                                alt="Campo com rotação de culturas mostrando diferentes tonalidades de verde"
+                                loading="lazy"
+                                width="600"
+                                height="400"
+                            >
                         </div>
                         <div class="timeline-text">
                             <span class="timeline-tag">Fertilidade natural</span>
@@ -179,25 +252,84 @@
                             <p>
                                 Alternar espécies enriquece o solo naturalmente e quebra ciclos de pragas sem defensivos químicos agressivos, garantindo a biodiversidade microbiana da terra.
                             </p>
+                            <button class="btn-text" onclick="abrirModal('rotacao')" aria-label="Saiba mais sobre Rotação e consórcio">
+                                Saiba mais →
+                            </button>
                         </div>
                     </div>
-                </div>
+                </article>
+                
+                <article class="timeline-item" role="listitem">
+                    <div class="timeline-marker" aria-hidden="true">03</div>
+                    <div class="timeline-content">
+                        <div class="timeline-image">
+                            <img 
+                                src="https://images.unsplash.com/photo-1592982537447-6f2a6a0c7c10?w=600&h=400&fit=crop" 
+                                alt="Sistema de irrigação por gotejamento em plantação sustentável"
+                                loading="lazy"
+                                width="600"
+                                height="400"
+                            >
+                        </div>
+                        <div class="timeline-text">
+                            <span class="timeline-tag">Gestão hídrica</span>
+                            <h3>Irrigação inteligente</h3>
+                            <p>
+                                Sistemas de gotejamento e sensores de umidade reduzem o consumo de água em até 60%, garantindo eficiência no uso dos recursos hídricos.
+                            </p>
+                            <button class="btn-text" onclick="abrirModal('irrigacao')" aria-label="Saiba mais sobre Irrigação inteligente">
+                                Saiba mais →
+                            </button>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- IMPACTO E DADOS -->
-    <section class="section impacto" id="impacto">
+    <section class="section impacto" id="impacto" aria-labelledby="impacto-title">
         <div class="container">
             <div class="impacto-grid">
                 <div class="impacto-text-block">
                     <span class="section-label">03 — Impacto</span>
-                    <h2 class="section-title-large">O peso da nossa <em>terra</em> na economia e futuro.</h2>
+                    <h2 class="section-title-large" id="impacto-title">
+                        O peso da nossa <em>terra</em> na economia e futuro.
+                    </h2>
                     <p>
-                        O agronegócio representa aproximadamente <strong>25% do PIB brasileiro</strong>. Equilibrar essa força produtiva com a conservação ambiental é o maior desafio e a maior oportunidade do nosso século.
+                        O agronegócio representa aproximadamente <strong>25% do PIB brasileiro</strong>, 
+                        equivalente a <strong>R$ 2,5 trilhões</strong> em 2025. Segundo a <abbr title="Empresa Brasileira de Pesquisa Agropecuária">Embrapa</abbr>, 
+                        <strong>66,3% do território nacional</strong> é coberto por vegetação nativa preservada, 
+                        muito acima da média mundial.
                     </p>
-                    <div id="chart-container" class="interactive-box">
-                        <canvas id="impactoChart"></canvas>
+                    <p>
+                        Equilibrar essa força produtiva com a conservação ambiental é o maior desafio 
+                        e a maior oportunidade do nosso século.
+                    </p>
+                    
+                    <div class="stats-grid" role="list">
+                        <div class="stat-card" role="listitem">
+                            <div class="stat-number">25%</div>
+                            <div class="stat-label">do PIB brasileiro</div>
+                            <small>Fonte: CEPEA/USP, 2025</small>
+                        </div>
+                        
+                        <div class="stat-card" role="listitem">
+                            <div class="stat-number">66,3%</div>
+                            <div class="stat-label">de vegetação nativa</div>
+                            <small>Fonte: Embrapa, 2025</small>
+                        </div>
+                        
+                        <div class="stat-card" role="listitem">
+                            <div class="stat-number">45%</div>
+                            <div class="stat-label">menos agrotóxicos</div>
+                            <small>em propriedades agroecológicas</small>
+                        </div>
+                    </div>
+                    
+                    <div id="chart-container" class="interactive-box" aria-label="Gráfico interativo de impacto ambiental">
+                        <canvas id="impactoChart" role="img" aria-label="Gráfico de barras mostrando a redução de impacto ambiental com práticas sustentáveis"></canvas>
+                        <p class="chart-caption">Redução de impacto ambiental com adoção de práticas sustentáveis (%)</p>
                     </div>
                 </div>
             </div>
@@ -205,9 +337,227 @@
     </section>
 
     <!-- QUIZ INTERATIVO -->
-    <section class="section quiz-section" id="quiz">
+    <section class="section quiz-section" id="quiz" aria-labelledby="quiz-title">
         <div class="container">
             <div class="section-header-center">
                 <span class="section-label">Desafio Prático</span>
-                <h2 class="section-title-large">Descubra seu <em>perfil sustentável</em></h2>
+                <h2 class="section-title-large" id="quiz-title">
+                    Descubra seu <em>perfil sustentável</em>
+                </h2>
                 <p>Teste seus conhecimentos sobre práticas agroecológicas e veja o impacto das suas escolhas.</p>
+            </div>
+
+            <div class="quiz-container" id="quiz-container" role="region" aria-label="Quiz interativo sobre sustentabilidade">
+                <div class="quiz-progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="5">
+                    <div class="quiz-progress-bar"></div>
+                </div>
+                
+                <div class="quiz-question" id="quiz-question">
+                    <p class="quiz-question-number">Pergunta <span id="question-current">1</span> de <span id="question-total">5</span></p>
+                    <h3 id="question-text">Qual prática agrícola mais contribui para a regeneração do solo?</h3>
+                    
+                    <div class="quiz-options" role="radiogroup" aria-labelledby="question-text">
+                        <button class="quiz-option" data-correct="false" role="radio" aria-checked="false">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">Monocultura intensiva</span>
+                        </button>
+                        <button class="quiz-option" data-correct="true" role="radio" aria-checked="false">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">Rotação de culturas com leguminosas</span>
+                        </button>
+                        <button class="quiz-option" data-correct="false" role="radio" aria-checked="false">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">Uso intensivo de fertilizantes sintéticos</span>
+                        </button>
+                        <button class="quiz-option" data-correct="false" role="radio" aria-checked="false">
+                            <span class="option-letter">D</span>
+                            <span class="option-text">Queimadas controladas</span>
+                        </button>
+                    </div>
+                    
+                    <button class="btn btn-primary quiz-next" id="quiz-next" disabled aria-label="Próxima pergunta">
+                        Próxima pergunta →
+                    </button>
+                </div>
+                
+                <div class="quiz-result" id="quiz-result" style="display: none;" aria-live="polite">
+                    <h3>Seu resultado</h3>
+                    <div class="result-score">
+                        <span id="result-correct">0</span>/<span id="result-total">5</span>
+                    </div>
+                    <p id="result-message">Você está no caminho certo!</p>
+                    <div class="result-feedback">
+                        <div class="feedback-icon">🌱</div>
+                        <p id="feedback-text">Continue aprendendo sobre práticas sustentáveis.</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="reiniciarQuiz()" aria-label="Refazer o quiz">
+                        Refazer quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section contato" id="contato" aria-labelledby="contato-title">
+        <div class="container">
+            <div class="contato-grid">
+                <div class="contato-info">
+                    <span class="section-label">Contato</span>
+                    <h2 class="section-title-large" id="contato-title">
+                        Vamos <em>construir</em> juntos o futuro do campo.
+                    </h2>
+                    <p>
+                        Entre em contato para saber mais sobre nossas práticas, parcerias 
+                        ou para compartilhar sua experiência com agricultura sustentável.
+                    </p>
+                    
+                    <div class="contato-details">
+                        <div class="contato-item">
+                            <span class="contato-icon">📧</span>
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:contato@raizesdoamanha.com.br">contato@raizesdoamanha.com.br</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contato-item">
+                            <span class="contato-icon">📍</span>
+                            <div>
+                                <strong>Localização</strong>
+                                <p>Brasil — Rede nacional de produtores</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contato-form" id="contato-form" novalidate aria-label="Formulário de contato">
+                    <div class="form-group">
+                        <label for="nome">Nome completo</label>
+                        <input 
+                            type="text" 
+                            id="nome" 
+                            name="nome" 
+                            required
+                            autocomplete="name"
+                            aria-required="true"
+                            aria-describedby="nome-error"
+                        >
+                        <span class="form-error" id="nome-error" role="alert"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required
+                            autocomplete="email"
+                            aria-required="true"
+                            aria-describedby="email-error"
+                        >
+                        <span class="form-error" id="email-error" role="alert"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="assunto">Assunto</label>
+                        <select id="assunto" name="assunto" required aria-required="true">
+                            <option value="">Selecione um assunto</option>
+                            <option value="parceria">Parceria</option>
+                            <option value="informacoes">Informações sobre práticas</option>
+                            <option value="imprensa">Imprensa</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea 
+                            id="mensagem" 
+                            name="mensagem" 
+                            rows="5" 
+                            required
+                            aria-required="true"
+                            aria-describedby="mensagem-error"
+                        ></textarea>
+                        <span class="form-error" id="mensagem-error" role="alert"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">
+                        Enviar mensagem
+                    </button>
+                    
+                    <div class="form-success" id="form-success" style="display: none;" role="status">
+                        ✓ Mensagem enviada com sucesso! Entraremos em contato em breve.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#home" class="logo" aria-label="Raízes do Amanhã">
+                        <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M20 8 C20 8, 14 16, 14 22 C14 26, 17 29, 20 29 C23 29, 26 26, 26 22 C26 16, 20 8, 20 8 Z" fill="currentColor"/>
+                            <line x1="20" y1="29" x2="20" y2="34" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        <div class="logo-text">
+                            <span class="logo-title">Raízes</span>
+                            <span class="logo-subtitle">do Amanhã</span>
+                        </div>
+                    </a>
+                    <p>Cultivando o amanhã, hoje.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#manifesto">Manifesto</a></li>
+                        <li><a href="#praticas">Práticas</a></li>
+                        <li><a href="#impacto">Impacto</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#" aria-label="Baixar guia de práticas sustentáveis (PDF)">Guia de práticas (PDF)</a></li>
+                        <li><a href="#" aria-label="Ver relatórios anuais">Relatórios anuais</a></li>
+                        <li><a href="#" aria-label="Acessar blog">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Raízes do Amanhã. Todos os direitos reservados.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="YouTube">📺</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" style="display: none;">
+        <div class="modal-content">
+            <button class="modal-close" onclick="fecharModal()" aria-label="Fechar modal">×</button>
+            <div class="modal-body" id="modal-body">
+                <!-- Conteúdo dinâmico via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
