@@ -175,42 +175,7 @@
                             <span class="timeline-tag">Fertilidade natural</span>
                             <h3>Rotação e consórcio</h3>
                             <p>
-                                Alternar espécies enriquece o solo, quebra ciclos de pragas 
-                                e reduz a necessidade de insumos externos.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker">03</div>
-                    <div class="timeline-content">
-                        <div class="timeline-image">
-                            <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600" alt="Irrigação inteligente">
-                        </div>
-                        <div class="timeline-text">
-                            <span class="timeline-tag">Tecnologia no campo</span>
-                            <h3>Irrigação de precisão</h3>
-                            <p>
-                                Sensores e automação entregam a água exata que cada 
-                                planta precisa — sem desperdício, sem estresse hídrico.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item reverse">
-                    <div class="timeline-marker">04</div>
-                    <div class="timeline-content">
-                        <div class="timeline-image">
-                            <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=600" alt="Controle biológico">
-                        </div>
-                        <div class="timeline-text">
-                            <span class="timeline-tag">Defesa natural</span>
-                            <h3>Controle biológico</h3>
-                            <p>
-                                Inimigos naturais no combate às pragas. Menos veneno, 
-                                mais equilíbrio ecológico e alimentos mais saudáveis.
+                                Alternar espécies enriquece o solo naturalmente e quebra ciclos de pragas sem defensivos químicos agressivos, garantindo a biodiversidade microbiana da terra.
                             </p>
                         </div>
                     </div>
@@ -219,166 +184,30 @@
         </div>
     </section>
 
-    <!-- IMPACTO - BENTO GRID -->
+    <!-- IMPACTO E DADOS (Nova seção do diagnóstico) -->
     <section class="section impacto" id="impacto">
         <div class="container">
-            <div class="section-header-center">
-                <span class="section-label">03 — Impacto</span>
-                <h2 class="section-title-large">
-                    Números que <em>contam</em> nossa história.
-                </h2>
-            </div>
-
-            <div class="bento-grid">
-                <div class="bento-card bento-large">
-                    <div class="bento-number">
-                        <span class="counter" data-target="40">0</span><span class="counter-suffix">%</span>
-                    </div>
-                    <h3>Economia de água</h3>
-                    <p>Com sistemas de irrigação inteligente em propriedades parceiras.</p>
-                    <div class="bento-decoration"></div>
-                </div>
-
-                <div class="bento-card bento-medium">
-                    <div class="bento-number">
-                        <span class="counter" data-target="800">0</span><span class="counter-suffix">+</span>
-                    </div>
-                    <h3>Produtores apoiados</h3>
-                    <p>em transição para modelos sustentáveis.</p>
-                </div>
-
-                <div class="bento-card bento-medium">
-                    <div class="bento-number">
-                        <span class="counter" data-target="60">0</span><span class="counter-suffix">%</span>
-                    </div>
-                    <h3>Menos agrotóxicos</h3>
-                    <p>graças ao controle biológico e práticas integradas.</p>
-                </div>
-
-                <div class="bento-card bento-small">
-                    <div class="bento-number">
-                        <span class="counter" data-target="12">0</span>
-                    </div>
-                    <h3>Anos de campo</h3>
-                </div>
-
-                <div class="bento-card bento-small">
-                    <div class="bento-number">
-                        <span class="counter" data-target="25">0</span><span class="counter-suffix">mil</span>
-                    </div>
-                    <h3>Hectares regenerados</h3>
-                </div>
-
-                <div class="bento-card bento-wide">
-                    <blockquote>
-                        "A terra não herdamos de nossos pais — ela nos foi emprestada por nossos filhos."
-                    </blockquote>
-                    <cite>— Provérbio indígena</cite>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTATO -->
-    <section class="section contato" id="contato">
-        <div class="container">
-            <div class="contato-grid">
-                <div class="contato-info">
-                    <span class="section-label">04 — Contato</span>
-                    <h2 class="section-title-large">
-                        Vamos <em>conversar</em> sobre o futuro do campo?
-                    </h2>
+            <div class="impacto-grid">
+                <div class="impacto-text-block">
+                    <span class="section-label">03 — Impacto</span>
+                    <h2 class="section-title-large">O peso da nossa <em>terra</em> na economia e futuro.</h2>
                     <p>
-                        Seja você produtor, pesquisador, estudante ou apenas alguém 
-                        que se importa com o planeta — queremos te ouvir.
+                        O agronegócio representa aproximadamente <strong>25% do PIB brasileiro</strong>. Equilibrar essa força produtiva com a conservação ambiental é o maior desafio e a maior oportunidade do nosso século.
                     </p>
-                    <div class="contato-details">
-                        <div class="detail-item">
-                            <span class="detail-label">E-mail</span>
-                            <span class="detail-value">ola@raizesdoamanha.com.br</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Telefone</span>
-                            <span class="detail-value">+55 (11) 4002-8922</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Endereço</span>
-                            <span class="detail-value">Estrada do Sol, km 12 — Interior de SP</span>
-                        </div>
+                    <!-- CONTAINER PARA GRÁFICO DINÂMICO OU CALCULADORA -->
+                    <div id="chart-container" class="interactive-box">
+                        <canvas id="impactoChart"></canvas>
                     </div>
                 </div>
-                <form class="contato-form" id="contato-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nome">Nome</label>
-                            <input type="text" id="nome" name="nome" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="assunto">Assunto</label>
-                        <input type="text" id="assunto" name="assunto" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="mensagem">Mensagem</label>
-                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-dark btn-full">Enviar mensagem →</button>
-                    <div class="form-feedback" id="form-feedback"></div>
-                </form>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
+    <!-- QUIZ INTERATIVO (Nova seção de engajamento ativo) -->
+    <section class="section quiz-section" id="quiz">
         <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <div class="logo logo-footer">
-                        <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                            <path d="M20 8 C20 8, 14 16, 14 22 C14 26, 17 29, 20 29 C23 29, 26 26, 26 22 C26 16, 20 8, 20 8 Z" fill="currentColor"/>
-                            <line x1="20" y1="29" x2="20" y2="34" stroke="currentColor" stroke-width="1.5"/>
-                        </svg>
-                        <div class="logo-text">
-                            <span class="logo-title">Raízes</span>
-                            <span class="logo-subtitle">do Amanhã</span>
-                        </div>
-                    </div>
-                    <p class="footer-tagline">Cultivando o amanhã, hoje.</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-col">
-                        <h5>Navegação</h5>
-                        <ul>
-                            <li><a href="#home">Início</a></li>
-                            <li><a href="#manifesto">Manifesto</a></li>
-                            <li><a href="#praticas">Práticas</a></li>
-                            <li><a href="#impacto">Impacto</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h5>Redes</h5>
-                        <ul>
-                            <li><a href="#">Instagram</a></li>
-                            <li><a href="#">YouTube</a></li>
-                            <li><a href="#">LinkedIn</a></li>
-                            <li><a href="#">Newsletter</a></li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="section-header-center">
+                <span class="section-label">Desafio Prático</span>
+                <h2 class="section-title-large">Descubra seu <em>perfil sustentável</em></h2>
+                <p>Teste seus conhecimentos sobre práticas agroecológicas e veja o impacto das suas escolhas.</p>
             </div>
-            <div class="footer-bottom">
-                <p>© 2026 Raízes do Amanhã. Feito com terra, suor e esperança.</p>
-                <p class="footer-small">Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
